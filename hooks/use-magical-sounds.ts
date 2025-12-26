@@ -115,98 +115,125 @@ export const useMagicalSounds = () => {
         const SONGS = [
             {
                 name: "My Grandfather's Clock",
-                // G, C, B, C, D, E, F, E...
                 notes: [7, 12, 11, 12, 14, 16, 17, 16, null, 12, 14, 12, 11, 7, 9, 7],
-                speed: 2 // Play every 2 steps (8th notes)
+                speed: 2
             },
             {
                 name: "Nada Sousou (Tears)",
-                // C, E, F, G... A, G...
                 notes: [0, 4, 5, 7, null, 7, 9, 7, null, 5, 4, 0, null, 2, 4, 2],
                 speed: 2
             },
             {
                 name: "La Marseillaise",
-                // G, G, C, C, G...
                 notes: [7, 7, 12, 12, 7, 16, 17, 19, 17, 16, 14, 19, 12],
                 speed: 2
             },
             {
-                name: "ROC Anthem (San Min Chu I)",
-                // C, D, E, G, A...
+                name: "ROC Anthem",
                 notes: [0, 2, 4, 7, 9, 7, 4, 2, 0, 2, 4, 2, 0],
                 speed: 4
             },
             {
                 name: "March of the Volunteers",
-                // G, E, G, G...
                 notes: [7, 4, 7, 7, 12, 7, 4, 0, 2, 7, 2, 0, 7, 0],
                 speed: 2
             },
             {
                 name: "The Star-Spangled Banner",
-                // G, E, C, E, G, C...
                 notes: [7, 4, 0, 4, 7, 12, 19, 16, 14, 16, 14, 12, -5, 4, 7],
                 speed: 2
             },
             {
-                name: "Moonlight March (Turkish March)",
-                // B, A, G#, A, C...
+                name: "Moonlight March",
                 notes: [11, 9, 8, 9, 12, 9, 8, 9, 12, 14, 16, 14, 12, 11],
                 speed: 1
             },
             {
                 name: "Four Seasons (Spring)",
-                // E, G#, G#, G#...
                 notes: [4, 8, 8, 8, 4, 8, 8, 8, 4, 8, 11, 9, 8, 6, 4],
                 speed: 2
             },
             {
                 name: "Fur Elise",
-                // E, D#, E, D#, E, B, D, C, A...
                 notes: [16, 15, 16, 15, 16, 11, 14, 12, 9, null, 0, 4, 9, 11],
                 speed: 1
             },
             {
-                name: "Anna Magdalena (Minuet in G)",
-                // D, G, A, B, C, D, G, G
+                name: "Anna Magdalena",
                 notes: [14, 7, 9, 11, 12, 14, 7, 7, null, 16, 17, 16, 14, 12, 11],
                 speed: 2
             }
         ];
 
-        // Randomly select one song
         const selectedSong = SONGS[Math.floor(Math.random() * SONGS.length)];
 
         for (let step = 0; step < totalSteps; step++) {
             const startTime = now + (step * sixteenthNoteTime);
 
+            // Structure: 
+            // 0% - 30%: Main Theme (Recognizable)
+            // 30% - 85%: Improvisation / Variations (Non-repetitive, derived from History)
+            // 85% - 100%: Main Theme Reprise (Ending)
+
+            const progress = step / totalSteps;
+            const isMainTheme = progress < 0.3 || progress > 0.85;
+
             // --- 1. MELODY LAYER ---
             if (step % selectedSong.speed === 0) {
-                const noteIndexInPattern = (step / selectedSong.speed) % selectedSong.notes.length;
-                const noteInterval = selectedSong.notes[noteIndexInPattern];
+                let melodyNoteIndex = -999;
+                let volume = 0.07;
 
-                if (noteInterval !== null) {
-                    let targetIndex = noteInterval + 12; // Center in middle octave
-                    targetIndex = Math.max(0, Math.min(targetIndex, SOUND_SEEDS.length - 1));
-                    const melodySeed = SOUND_SEEDS[targetIndex];
-                    const vol = (noteIndexInPattern === 0) ? 0.1 : 0.07;
-                    triggerSound(ctx, melodySeed, startTime, vol);
+                if (isMainTheme) {
+                    // Play defined Motif
+                    const noteIndexInPattern = (step / selectedSong.speed) % selectedSong.notes.length;
+                    const noteInterval = selectedSong.notes[noteIndexInPattern];
+                    if (noteInterval !== null) {
+                        melodyNoteIndex = noteInterval + 12; // Middle Octave
+                        if (noteIndexInPattern === 0) volume = 0.1; // Accent start
+                    }
+                } else {
+                    // IMPROVISATION PHASE (The "Solo")
+                    // We generate melody from user history, ensuring it doesn't just loop
+                    // Step-based random walk through history
+                    const historyIndex = (step + Math.floor(step / 32)) % indices.length;
+                    const rawSeed = indices[historyIndex];
+
+                    // Map this raw seed to a "safe" Pentatonic-ish scale interval
+                    // C Major: 0, 2, 4, 5, 7, 9, 11, 12
+                    const safeIntervals = [0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19];
+                    const interval = safeIntervals[rawSeed % safeIntervals.length];
+
+                    // Add variation: occasionally jump octave
+                    const octaveOffset = (step % 16 === 0) ? 12 : 0;
+
+                    // Rhythm variation in solo: sometimes skip a note
+                    const rhythmVar = Math.sin(step);
+                    if (rhythmVar > -0.7) { // 70% chance to play
+                        melodyNoteIndex = interval + octaveOffset + 12;
+                    }
+                }
+
+                if (melodyNoteIndex !== -999) {
+                    const finalIndex = Math.max(0, Math.min(melodyNoteIndex, SOUND_SEEDS.length - 1));
+                    triggerSound(ctx, SOUND_SEEDS[finalIndex], startTime, volume);
                 }
             }
 
             // --- 2. BACKING LAYER (User History) ---
+            // Continuous bass/arpeggio to glue it together
             if (step % 4 === 0) {
                 const bassHistoryIndex = indices[Math.floor(step / 4) % indices.length];
                 const safeBassOffsets = [0, 5, 7, 9]; // C, F, G, Am
                 const bassOffset = safeBassOffsets[Math.abs(bassHistoryIndex) % safeBassOffsets.length];
 
-                const bassSeed = SOUND_SEEDS[bassOffset];
-                triggerSound(ctx, bassSeed, startTime, 0.1);
+                // If in solo section, maybe play bass slightly louder/busier?
+                const bassVol = isMainTheme ? 0.1 : 0.08;
+
+                triggerSound(ctx, SOUND_SEEDS[bassOffset], startTime, bassVol);
             }
 
             // Texture / Sparkle
-            if (Math.random() > 0.9) {
+            if (Math.random() > 0.92) {
                 const sparkleIndex = indices[Math.floor(Math.random() * indices.length)];
                 const sparkleSeed = SOUND_SEEDS[(Math.abs(sparkleIndex) % 12) + 24];
                 triggerSound(ctx, sparkleSeed, startTime, 0.02);

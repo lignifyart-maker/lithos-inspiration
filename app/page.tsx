@@ -64,12 +64,16 @@ const minerals = [
   { name: "黑星石 (Black Star)", theme: "#000000", image: "/minerals/50-black-star.webp", messages: ["黑暗中的指引，讓主角在絕望中看見希望。", "挖掘潛能，你還有很多沒用上的才華。", "你看不到星星？因為星星在你心裡，噁心吧？"] },
 ];
 
+import { useMagicalSounds } from "@/hooks/use-magical-sounds";
+
 export default function Home() {
   const [selectedMineral, setSelectedMineral] = useState(minerals[0]);
   const [selectedMessage, setSelectedMessage] = useState(minerals[0].messages[0]);
   const [isSpinning, setIsSpinning] = useState(false);
   // History now also stores the message to allow full restore
   const [history, setHistory] = useState<{ mineral: typeof minerals[0], message: string }[]>([]);
+
+  const { playRandomSound } = useMagicalSounds();
 
   const drawFortune = () => {
     setIsSpinning(true);
@@ -80,6 +84,9 @@ export default function Home() {
 
       setSelectedMineral(randomMineral);
       setSelectedMessage(message);
+
+      // Play random soft sound
+      playRandomSound();
 
       // Add to history without limit, storing both mineral and message
       setHistory(prev => [{ mineral: randomMineral, message }, ...prev]);
@@ -211,37 +218,45 @@ export default function Home() {
         </div >
       </main >
 
-      <footer className="px-6 py-4 flex flex-col gap-3 shrink-0 bg-black/40 backdrop-blur-md">
-        <div className="flex items-center gap-2">
-          <HistoryIcon size={12} className="text-zinc-600" />
-          <span className="text-[10px] font-black tracking-widest text-zinc-600 uppercase">Archive ({history.length})</span>
+      <footer className="px-6 py-6 flex flex-col gap-4 shrink-0 bg-black/40 backdrop-blur-md max-h-[35vh] overflow-y-auto custom-scrollbar">
+        <div className="flex items-center justify-between sticky top-0 bg-black/0 backdrop-blur-sm p-1 z-10 w-full">
+          <div className="flex items-center gap-2">
+            <HistoryIcon size={12} className="text-zinc-500" />
+            <span className="text-[10px] font-black tracking-widest text-zinc-500 uppercase">Collection ({history.length})</span>
+          </div>
         </div>
-        <div className="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
+
+        <div className="flex flex-wrap content-start gap-2 pb-2">
           {history.length > 0 ? history.map((item, i) => (
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               key={`${item.mineral.name}-${i}`}
               onClick={() => restoreHistory(item)}
-              className="pl-2 pr-3 py-1.5 rounded-full bg-white/5 border border-white/10 flex items-center gap-2 shrink-0 cursor-pointer hover:bg-white/10 transition-colors"
+              layout
+              className="pl-1.5 pr-3 py-1.5 rounded-full bg-white/5 border border-white/5 flex items-center gap-2 cursor-pointer hover:bg-white/10 hover:border-white/20 transition-all group"
             >
-              <div className="relative w-6 h-6 rounded-full overflow-hidden bg-black/20">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden bg-black/40 ring-1 ring-white/10 group-hover:ring-white/30 transition-all">
                 {item.mineral.image && (
                   <Image
                     src={item.mineral.image}
                     alt={item.mineral.name}
                     fill
                     className="object-cover"
-                    sizes="24px"
+                    sizes="32px"
                   />
                 )}
               </div>
               <div className="flex flex-col">
-                <span className="text-[10px] font-bold text-zinc-400 whitespace-nowrap uppercase leading-none">{item.mineral.name.split(' ')[0]}</span>
+                <span className="text-[10px] font-bold text-zinc-400 group-hover:text-zinc-200 whitespace-nowrap uppercase leading-none transition-colors">
+                  {item.mineral.name.split(' ')[0]}
+                </span>
               </div>
             </motion.div>
           )) : (
-            <span className="text-[10px] text-zinc-800 font-bold uppercase tracking-widest italic text-zinc-700">Waiting for your first draw...</span>
+            <div className="w-full flex justify-center py-4">
+              <span className="text-[10px] text-zinc-800 font-bold uppercase tracking-widest italic">Waiting for your first draw...</span>
+            </div>
           )}
         </div>
       </footer>

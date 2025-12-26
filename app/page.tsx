@@ -42,51 +42,59 @@ const minerals = [
   { name: "方解石 (Calcite)", theme: "#fed7aa", image: "/minerals/28-calcite.webp", messages: ["轉換角度看世界，死胡同裡也會有新的出口。", "學習新的技能，這會成為你未來的寫作素材。", "放輕鬆，就算這頁寫爛了也沒什麼大不了。"] },
   { name: "天青石 (Celestite)", theme: "#dbeafe", image: "/minerals/29-celestite.webp", messages: ["讓想像力飛向天際，今天適合構思科幻題材。", "平和的心境能招來好夢，今晚早點睡吧。", "天青色等煙雨，而我在等你的下一章更新。"] },
   { name: "黃鐵礦 (Pyrite)", theme: "#ca8a04", image: "/minerals/30-pyrite.webp", messages: ["看似平凡的事物也含有黃金，提煉日常的詩意。", "意志如鋼鐵般堅硬，不要被小挫折打敗。", "雖然我看起來像黃金，但我知道你不是在想黃金就是在想放假。"] },
-  { name: "太陽石 (Sunstone)", theme: "#fdba74", messages: ["陽光是最好的動力，去戶外走走，靈感在空氣中。", "展現領導力，今天你就是自己生命的主角。", "充滿正能量的你，看起來就像個沒被工作摧殘過的新人。"] },
-  { name: "綠松石 (Turquoise)", theme: "#06b6d4", messages: ["古老的智慧在呼喚，在故事中加入神話元素。", "旅途平安，今天適合安排一場說走就走的旅行。", "你是我的好朋友，但我還是建議你先去把碗洗了。"] },
-  { name: "紫龍晶 (Charoite)", theme: "#581c87", messages: ["接受改變的恐懼，轉化它為作品中的衝突張力。", "深刻的洞察，讓你看到事情不為人知的一面。", "這顏色很魔幻，就像你至今還沒實現的暴富夢。"] },
-  { name: "白水晶 (Clear Quartz)", theme: "#ffffff", messages: ["清空一切想法，最純粹的動機將會浮現。", "放大你的意念，專注於你真正想要達成的目標。", "你現在腦袋裡跟這顆水晶一樣，一片空白。"] },
-  { name: "血石 (Bloodstone)", theme: "#064e3b", messages: ["意志力是您的盔甲，不要被一時的批評擊倒。", "找回身體的活力，你需要熱血沸騰的戰鬥感。", "流汗總比流淚好，所以快去運動或是寫稿！"] },
-  { name: "珍珠 (Pearl)", theme: "#fff7ed", messages: ["痛苦的磨練終會成珠，珍惜那些流淚的經驗。", "內斂的光芒，不需要張揚也能被看見。", "珍珠代表優雅，請優雅地處理你那堆爛事。"] },
-  { name: "葡萄石 (Prehnite)", theme: "#bbf7d0", messages: ["做足準備迎接未來，努力正在無聲無息積累。", "放下不需要的負擔，空間才能讓新東西進來。", "你以為這是葡萄？不，這是你這輩子吃不到的甜頭。"] },
-  { name: "蘇打石 (Sodalite)", theme: "#1e3a8a", messages: ["邏輯推理的時刻，檢查故事邏輯是否有破綻。", "理性的溝通，勝過感性的咆哮。", "大腦是個好東西，蘇打石希望你有帶出門。"] },
-  { name: "鋰雲母 (Lepidolite)", theme: "#d8b4fe", messages: ["緩解焦慮，今天不強求進度，只求寫得舒心。", "過渡時期的平靜，接受現狀也是一種前進。", "焦慮也沒用，反正明天事情還是做不完。"] },
-  { name: "透輝石 (Diopside)", theme: "#065f46", messages: ["連結大自然，描述一場與森林或土地的對話。", "心靈的治癒，從放過自己開始。", "綠色的光芒，提醒你：該綠的是草地，不是你的頭。"] },
-  { name: "鋯石 (Zircon)", theme: "#0e7490", messages: ["提升作品質感，今天適合進行細微的修辭打磨。", "光芒四射，不要隱藏你的才華。", "我是鋯石，不是鑽石，就像你的草稿還不是成品。"] },
-  { name: "黝簾石 (Anyolite)", theme: "#22c55e", messages: ["生命力與熱情結合，創造一個充滿活力的新場景。", "面對衝突，用熱情去化解冷漠。", "紅配綠，這美感我真的看不懂。"] },
-  { name: "尖晶石 (Spinel)", theme: "#ef4444", messages: ["重生與更新，賦予舊角色一個意想不到的身分。", "在壓力下展現韌性，你比想像中更強大。", "別再尖叫了，尖晶石建議你先閉嘴寫稿。"] },
-  { name: "青金石 (Azurite)", theme: "#1d4ed8", messages: ["洞察力覺醒，看穿事情本質，寫出更有洞見的對白。", "深度冥想，讓思緒進入更深層的空間。", "你的眼界決定了你的世界，還有你的存款金額。"] },
-  { name: "捷克隕石 (Moldavite)", theme: "#064e3b", messages: ["打破常規，寫一段完全不像您的文字！", "快速的轉變，抓住那股來自天外的推動力。", "來自外星的叮嚀：地球很危險，快回火星吧。"] },
-  { name: "孔賽石 (Kunzite)", theme: "#fce7f3", messages: ["無條件的愛，對待筆下的角色多一點同理心。", "情緒的流動，讓悲傷也能化為美麗的詩篇。", "愛可以發電，但不能幫你付房租。"] },
-  { name: "海紋石 (Larimar)", theme: "#bfdbfe", messages: ["感受海洋的寬廣，不要在小細節上鑽牛角尖。", "和平與寧靜，今天適合放慢腳步生活。", "這顏色像極了你想要去度假，但現實不允許的心情。"] },
-  { name: "赤鐵礦 (Hematite)", theme: "#52525b", messages: ["專注當下，把發散的思緒全部收回來。", "勇氣的守護，不要怕別人的閒言閒語。", "我是鐵，你是廢鐵，我們合起來就是鐵定廢。"] },
-  { name: "藍玉髓 (Blue Chalcedony)", theme: "#93c5fd", messages: ["柔和的溝通，讓讀者感受到文字中的善意。", "傾聽內心的聲音，那是你創作最真實的來源。", "別說了，藍玉髓覺得你現在說什麼都是廢話。"] },
-  { name: "黑星石 (Black Star)", theme: "#000000", messages: ["在黑暗中定位，您的核心價值會指引故事走向。", "沈穩的領導力，今天你說了算。", "星星在黑夜才閃亮，所以你現在慘一點也是正常的。"] }
+  { name: "太陽石 (Sunstone)", theme: "#fdba74", image: "/minerals/31-sunstone.webp", messages: ["陽光是最好的動力，去戶外走走，靈感在空氣中。", "展現領導力，今天你就是自己生命的主角。", "充滿正能量的你，看起來就像個沒被工作摧殘過的新人。"] },
+  { name: "綠松石 (Turquoise)", theme: "#06b6d4", image: "/minerals/32-turquoise.webp", messages: ["古老的智慧在呼喚，在故事中加入神話元素。", "旅途平安，今天適合安排一場說走就走的旅行。", "你是我的好朋友，但我還是建議你先去把碗洗了。"] },
+  { name: "紫龍晶 (Charoite)", theme: "#581c87", image: "/minerals/33-charoite.webp", messages: ["接受改變的恐懼，轉化它為作品中的衝突張力。", "深刻的洞察，讓你看到事情不為人知的一面。", "這顏色很魔幻，就像你至今還沒實現的暴富夢。"] },
+  { name: "白水晶 (Clear Quartz)", theme: "#ffffff", image: "/minerals/34-clear-quartz.webp", messages: ["清空一切想法，最純粹的動機將會浮現。", "放大你的意念，專注於你真正想要達成的目標。", "你現在腦袋裡跟這顆水晶一樣，一片空白。"] },
+  { name: "血石 (Bloodstone)", theme: "#064e3b", image: "/minerals/35-bloodstone.webp", messages: ["意志力是您的盔甲，不要被一時的批評擊倒。", "找回身體的活力，你需要熱血沸騰的戰鬥感。", "流汗總比流淚好，所以快去運動或是寫稿！"] },
+  { name: "珍珠 (Pearl)", theme: "#fff7ed", image: "/minerals/36-pearl.webp", messages: ["痛苦的磨練終會成珠，珍惜那些流淚的經驗。", "內斂的光芒，不需要張揚也能被看見。", "珍珠代表優雅，請優雅地處理你那堆爛事。"] },
+  { name: "葡萄石 (Prehnite)", theme: "#bbf7d0", image: "/minerals/37-prehnite.webp", messages: ["做足準備迎接未來，努力正在無聲無息積累。", "放下不需要的負擔，空間才能讓新東西進來。", "你以為這是葡萄？不，這是你這輩子吃不到的甜頭。"] },
+  { name: "蘇打石 (Sodalite)", theme: "#1e3a8a", image: "/minerals/38-sodalite.webp", messages: ["邏輯推理的時刻，檢查故事邏輯是否有破綻。", "理性的溝通，勝過感性的咆哮。", "大腦是個好東西，蘇打石希望你有帶出門。"] },
+  { name: "鋰雲母 (Lepidolite)", theme: "#d8b4fe", image: "/minerals/39-lepidolite.webp", messages: ["緩解焦慮，今天不強求進度，只求寫得舒心。", "過渡時期的平靜，接受現狀也是一種前進。", "焦慮也沒用，反正明天事情還是做不完。"] },
+  { name: "透輝石 (Diopside)", theme: "#065f46", image: "/minerals/40-diopside.webp", messages: ["連結大自然，描述一場與森林或土地的對話。", "心靈的治癒，從放過自己開始。", "綠色的光芒，提醒你：該綠的是草地，不是你的頭。"] },
+  { name: "鋯石 (Zircon)", theme: "#0e7490", image: "/minerals/41-zircon.webp", messages: ["提升作品質感，今天適合進行細微的修辭打磨。", "光芒四射，不要隱藏你的才華。", "我是鋯石，不是鑽石，就像你的草稿還不是成品。"] },
+  { name: "黝簾石 (Anyolite)", theme: "#22c55e", image: "/minerals/42-anyolite.webp", messages: ["生命力與熱情結合，創造一個充滿活力的新場景。", "面對衝突，用熱情去化解冷漠。", "紅配綠，這美感我真的看不懂。"] },
+  { name: "尖晶石 (Spinel)", theme: "#ef4444", image: "/minerals/43-spinel.webp", messages: ["重生與更新，賦予舊角色一個意想不到的身分。", "在壓力下展現韌性，你比想像中更強大。", "別再尖叫了，尖晶石建議你先閉嘴寫稿。"] },
+  { name: "藍銅礦 (Azurite)", theme: "#1e3a8a", image: "/minerals/44-azurite.webp", messages: ["開啟直覺力，相信你對故事走向的第一直覺。", "深層的智慧，答案其實早就藏在你心裡。", "藍到發黑，就像你熬夜寫稿的眼圈。"] },
+  { name: "捷克隕石 (Moldavite)", theme: "#14532d", image: "/minerals/45-moldavite.webp", messages: ["來自宇宙的靈感，嘗試科幻或超現實的題材。", "劇烈的轉變，讓主角經歷一場震撼的事件。", "我是隕石，我從天上下來是為了砸醒你。"] },
+  { name: "紫鋰輝石 (Kunzite)", theme: "#f0abfc", image: "/minerals/46-kunzite.webp", messages: ["無條件的愛，寫一段感人至深的情感戲。", "打開心扉，讓讀者感受到角色的脆弱與真誠。", "粉粉嫩嫩的，適合寫點戀愛腦的劇情。"] },
+  { name: "拉利瑪 (Larimar)", theme: "#7dd3fc", image: "/minerals/47-larimar.webp", messages: ["海洋的平靜，讓文字如流水般自然流淌。", "療癒溝通，解決角色之間的誤會。", "看著這片藍，是不是想去海邊？想得美，快寫稿。"] },
+  { name: "赤鐵礦 (Hematite)", theme: "#4b5563", image: "/minerals/48-hematite.webp", messages: ["接地氣，讓故事背景更紮實、更有生活感。", "反彈負能量，不要理會酸民的評論。", "我很重，就像你拖延已久的截稿壓力。"] },
+  { name: "藍玉髓 (Blue Chalcedony)", theme: "#a5b4fc", image: "/minerals/49-blue-chalcedony.webp", messages: ["溫柔的表達，用細膩的筆觸描繪情感。", "內心的安寧，在寫作中找到避風港。", "溫溫柔柔的，適合寫點睡前讀物。"] },
+  { name: "黑星石 (Black Star)", theme: "#000000", image: "/minerals/50-black-star.webp", messages: ["黑暗中的指引，讓主角在絕望中看見希望。", "挖掘潛能，你還有很多沒用上的才華。", "你看不到星星？因為星星在你心裡，噁心吧？"] },
 ];
 
 export default function Home() {
   const [selectedMineral, setSelectedMineral] = useState(minerals[0]);
   const [selectedMessage, setSelectedMessage] = useState(minerals[0].messages[0]);
   const [isSpinning, setIsSpinning] = useState(false);
-  const [history, setHistory] = useState<typeof minerals>([]);
+  // History now also stores the message to allow full restore
+  const [history, setHistory] = useState<{ mineral: typeof minerals[0], message: string }[]>([]);
 
   const drawFortune = () => {
     setIsSpinning(true);
     setTimeout(() => {
       const randomMineral = minerals[Math.floor(Math.random() * minerals.length)];
       const randomMsgIndex = Math.floor(Math.random() * 3);
+      const message = randomMineral.messages[randomMsgIndex];
+
       setSelectedMineral(randomMineral);
-      setSelectedMessage(randomMineral.messages[randomMsgIndex]);
-      setHistory(prev => [randomMineral, ...prev].slice(0, 8));
+      setSelectedMessage(message);
+
+      // Add to history without limit, storing both mineral and message
+      setHistory(prev => [{ mineral: randomMineral, message }, ...prev]);
+
       setIsSpinning(false);
     }, 1000);
   };
 
-  const copyToClipboard = () => {
-    const text = `【${selectedMineral.name} 指引】\n"${selectedMessage}"`;
-    navigator.clipboard.writeText(text);
-    // 這裡可以加入簡單的提示
+  const restoreHistory = (item: { mineral: typeof minerals[0], message: string }) => {
+    if (isSpinning) return;
+    setSelectedMineral(item.mineral);
+    setSelectedMessage(item.message);
   };
+
+
 
   return (
     <div className="relative h-[100dvh] flex flex-col overflow-hidden bg-[#09090b] text-white">
@@ -134,13 +142,15 @@ export default function Home() {
               <div className="w-full h-full absolute inset-0 blur-2xl opacity-20" style={{ backgroundColor: selectedMineral.theme }} />
               {/* Image if available, otherwise Sparkles fallback */}
               {selectedMineral.image ? (
-                <div className="relative w-3/4 h-3/4">
+                // Increased size to w-full h-full with slight padding to respect the original rounded corner aesthetic but fit better
+                <div className="relative w-full h-full p-2">
                   <Image
                     src={selectedMineral.image}
                     alt={selectedMineral.name}
                     fill
                     className="object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)] filter contrast-125 saturate-110"
                     priority
+                    sizes="(max-width: 768px) 192px, 320px"
                   />
                 </div>
               ) : (
@@ -183,16 +193,6 @@ export default function Home() {
                 )}
               </AnimatePresence>
             </div>
-
-            <div className="flex justify-start">
-              <button
-                onClick={copyToClipboard}
-                className="text-[10px] font-bold text-zinc-600 flex items-center gap-1 hover:text-white transition-colors"
-                title="Copy to clipboard"
-              >
-                <Share2 size={12} /> COPY TEXT
-              </button>
-            </div>
           </div>
 
           <button
@@ -214,18 +214,31 @@ export default function Home() {
       <footer className="px-6 py-4 flex flex-col gap-3 shrink-0 bg-black/40 backdrop-blur-md">
         <div className="flex items-center gap-2">
           <HistoryIcon size={12} className="text-zinc-600" />
-          <span className="text-[10px] font-black tracking-widest text-zinc-600 uppercase">Recent Archetypes</span>
+          <span className="text-[10px] font-black tracking-widest text-zinc-600 uppercase">Archive ({history.length})</span>
         </div>
         <div className="flex gap-3 overflow-x-auto pb-2 no-scrollbar">
-          {history.length > 0 ? history.map((h, i) => (
+          {history.length > 0 ? history.map((item, i) => (
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              key={`${h.name}-${i}`}
-              className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 flex items-center gap-2 shrink-0"
+              key={`${item.mineral.name}-${i}`}
+              onClick={() => restoreHistory(item)}
+              className="pl-2 pr-3 py-1.5 rounded-full bg-white/5 border border-white/10 flex items-center gap-2 shrink-0 cursor-pointer hover:bg-white/10 transition-colors"
             >
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: h.theme }} />
-              <span className="text-[10px] font-bold text-zinc-400 whitespace-nowrap uppercase">{h.name.split(' ')[0]}</span>
+              <div className="relative w-6 h-6 rounded-full overflow-hidden bg-black/20">
+                {item.mineral.image && (
+                  <Image
+                    src={item.mineral.image}
+                    alt={item.mineral.name}
+                    fill
+                    className="object-cover"
+                    sizes="24px"
+                  />
+                )}
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-bold text-zinc-400 whitespace-nowrap uppercase leading-none">{item.mineral.name.split(' ')[0]}</span>
+              </div>
             </motion.div>
           )) : (
             <span className="text-[10px] text-zinc-800 font-bold uppercase tracking-widest italic text-zinc-700">Waiting for your first draw...</span>

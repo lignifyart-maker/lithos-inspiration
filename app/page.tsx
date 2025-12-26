@@ -12,7 +12,7 @@ function cn(...inputs: ClassValue[]) {
 }
 
 const minerals = [
-  { name: "帝王拓帕石 (Imperial Topaz)", theme: "#fb923c", image: "/minerals/01-imperial-topaz.webp", messages: ["展現您的自信，今天適合開啟新的寫作章節。", "溫暖的光芒正包圍著你，試著寫一段療癒人心的文字。", "看到這道橘光了嗎？那是代表『大橘已定』，晚餐就去吃大餐吧！"] },
+  { name: "帝王拓帕石 (Imperial Topaz)", theme: "#fb923c", image: "/minerals/01-imperial-topaz-v3.png", messages: ["展現您的自信，今天適合開啟新的寫作章節。", "溫暖的光芒正包圍著你，試著寫一段療癒人心的文字。", "看到這道橘光了嗎？那是代表『大橘已定』，晚餐就去吃大餐吧！"] },
   { name: "紫水晶 (Amethyst)", theme: "#a855f7", image: "/minerals/02-amethyst.webp", messages: ["內心平靜是創意的泉源，試著在安靜中尋找靈感。", "夢境是潛意識的訊息，今天就把昨晚的夢寫下來吧。", "紫水晶代表智慧，所以關於感情問題，我一率建議分手。"] },
   { name: "拉長石 (Labradorite)", theme: "#475569", image: "/minerals/03-labradorite.webp", messages: ["視角轉換會帶來驚喜，試著從反派的角度思考故事。", "平凡的外表下隱藏著閃光，今天去發現身邊被忽略的美。", "別被我的漂亮外表騙了，我內心戲比你的小說草稿還多。"] },
   { name: "粉晶 (Rose Quartz)", theme: "#f472b6", image: "/minerals/04-rose-quartz.webp", messages: ["創作不需要追求完美的無瑕，誠實面對自己的脆弱。", "多愛自己一點，您的文字溫度來自於您對生活的愛。", "雖然我是招桃花的粉晶，但建議你還是先去招財比較實際。"] },
@@ -25,7 +25,7 @@ const minerals = [
   { name: "月光石 (Moonstone)", theme: "#e0e7ff", image: "/minerals/11-moonstone.webp", messages: ["跟隨直覺，有些情節不需要邏輯，只需要感覺。", "溫柔地對待周遭的人，你的柔和會化解衝突。", "月亮代表我的心，但你的薪水可能只有月亮的一半。"] },
   { name: "孔雀石 (Malachite)", theme: "#047857", image: "/minerals/12-malachite.webp", messages: ["勇敢刪除不再適合的舊草稿，舊的不去新的不來。", "面對改變，不要害怕轉行或嘗試新領域。", "我上面的條紋，跟我現在看你程式碼產生的皺眉紋一樣多。"] },
   { name: "螢石 (Fluorite)", theme: "#2dd4bf", image: "/minerals/13-fluorite.webp", messages: ["混亂中需要邏輯，今天適合整理您的靈感筆記。", "專注於當下，讓學習成為一種快樂。", "這不是螢石，這是你未來熬夜趕稿時發出的肝火。"] },
-  { name: "黃水晶 (Citrine)", theme: "#facc15", image: "/minerals/14-citrine.webp", messages: ["喜悅能吸引好運，帶著笑容寫下的文字會有魔法。", "自信是成功的基石，相信你值得擁有財富。", "財運來了！快去買張樂透，雖然中獎機率比你準時交稿還低。"] },
+  { name: "黃水晶 (Citrine)", theme: "#facc15", image: "/minerals/14-citrine-v3.png", messages: ["喜悅能吸引好運，帶著笑容寫下的文字會有魔法。", "自信是成功的基石，相信你值得擁有財富。", "財運來了！快去買張樂透，雖然中獎機率比你準時交稿還低。"] },
   { name: "石榴石 (Garnet)", theme: "#7f1d1d", image: "/minerals/15-garnet.webp", messages: ["深沈的能量正在蓄積，好故事需要時間醞釀。", "保持忠誠與真實，對待工作與感情皆然。", "石榴石代表氣血，多喝熱水，少看前任的動態。"] },
   { name: "瑪瑙 (Agate)", theme: "#c2410c", image: "/minerals/16-agate.webp", messages: ["注意環境的小細節，細膩的描寫能讓世界更真實。", "緩慢而穩定地前進，不要跟別人的進度比較。", "人生就像瑪瑙，沒切開之前你都不知道自己多能撐。"] },
   { name: "紅紋石 (Rhodochrosite)", theme: "#f43f5e", image: "/minerals/17-rhodochrosite.webp", messages: ["誠實面對脆弱，真實的情感最能打動讀者。", "擁抱過去的傷口，它們是滋養創意的養分。", "別再問為什麼沒人愛你了，紅紋石建議你先去洗臉。"] },

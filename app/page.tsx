@@ -65,15 +65,16 @@ const minerals = [
 ];
 
 import { useMagicalSounds } from "@/hooks/use-magical-sounds";
+import { Play } from "lucide-react";
 
 export default function Home() {
   const [selectedMineral, setSelectedMineral] = useState(minerals[0]);
   const [selectedMessage, setSelectedMessage] = useState(minerals[0].messages[0]);
   const [isSpinning, setIsSpinning] = useState(false);
   // History now also stores the message to allow full restore
-  const [history, setHistory] = useState<{ mineral: typeof minerals[0], message: string }[]>([]);
+  const [history, setHistory] = useState<{ mineral: typeof minerals[0], message: string, soundIndex: number }[]>([]);
 
-  const { playRandomSound } = useMagicalSounds();
+  const { playNote, playSequence } = useMagicalSounds();
 
   const drawFortune = () => {
     setIsSpinning(true);
@@ -86,10 +87,10 @@ export default function Home() {
       setSelectedMessage(message);
 
       // Play random soft sound
-      playRandomSound();
+      const seedIndex = playNote();
 
       // Add to history without limit, storing both mineral and message
-      setHistory(prev => [{ mineral: randomMineral, message }, ...prev]);
+      setHistory(prev => [{ mineral: randomMineral, message, soundIndex: seedIndex }, ...prev]);
 
       setIsSpinning(false);
     }, 1000);
@@ -215,8 +216,29 @@ export default function Home() {
             <span>{isSpinning ? "感知中..." : "獲取今日指引"}</span>
             <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-orange-400 via-purple-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
           </button>
-        </div >
-      </main >
+
+          {/* Play Journey Button */}
+          <div className="flex justify-center h-8">
+            <AnimatePresence>
+              {history.length > 1 && (
+                <motion.button
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  onClick={() => {
+                    const indices = history.map(h => h.soundIndex).reverse();
+                    playSequence(indices, 30);
+                  }}
+                  className="flex items-center gap-1.5 px-4 py-1.5 rounded-full transition-all text-[10px] font-bold tracking-wider uppercase text-zinc-400 hover:text-white hover:bg-white/10"
+                >
+                  <Play size={10} className="fill-current" />
+                  <span>Play Journey (30s)</span>
+                </motion.button>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+      </main>
 
       <footer className="px-6 py-6 flex flex-col gap-4 shrink-0 bg-black/40 backdrop-blur-md max-h-[35vh] overflow-y-auto custom-scrollbar">
         <div className="flex items-center justify-between sticky top-0 bg-black/0 backdrop-blur-sm p-1 z-10 w-full">
@@ -260,6 +282,6 @@ export default function Home() {
           )}
         </div>
       </footer>
-    </div >
+    </div>
   );
 }

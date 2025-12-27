@@ -47,6 +47,38 @@ no text, no UI, no watermark.
 - `[CRYSTAL_HABIT_DESCRIPTION]` - Description of crystal shape (e.g., "prismatic hexagonal columns", "dodecahedral habit")
 - `[MINERAL_COLOR_DESCRIPTION]` - Color characteristics (e.g., "deep purple with violet highlights", "golden honey yellow")
 
+## Special Rule: Small Crystal Minerals
+
+**For minerals that naturally occur as very small crystals in nature**, do NOT draw a single giant crystal. Instead, use the following modified prompt structure:
+
+```
+A cute, minimalistic 3D illustration designed as a collectible game asset.
+
+A piece of [MATRIX_ROCK] matrix with many small [MINERAL_NAME] crystals growing on its surface,
+rendered with scientifically accurate mineral crystal habit:
+[CRYSTAL_SYSTEM] crystal system,
+[SMALL_CRYSTAL_DESCRIPTION],
+many tiny sparkly crystals clustered together on the host rock.
+
+The mineral color matches natural characteristics:
+[MINERAL_COLOR_DESCRIPTION].
+
+All edges are outlined with a clean, solid white border,
+giving a stylized toy-like appearance similar to a museum display model.
+
+Next to the specimen stands a small cute chibi [ANIMAL] character.
+The scene is set on a soft neutral background with studio-style lighting.
+
+Style: whimsical, cozy, educational, high-quality 3D game illustration,
+soft lighting, smooth surfaces, no text, no UI, no watermark.
+```
+
+**Examples of small crystal minerals:**
+- Uvarovite (鈣鉻榴石) - tiny druzy crystals on matrix
+- Millerite (針鎳礦) - hairlike needle crystals
+- Vanadinite (釩鉛礦) - small hexagonal crystals on matrix
+- Pyromorphite (磷氯鉛礦) - small barrel crystals on matrix
+
 ## Example Usage
 
 For Alexandrite:

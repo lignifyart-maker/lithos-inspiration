@@ -114,9 +114,9 @@ const minerals = [
   // 91-100
   { name: "西瓜碧璽 (Watermelon Tourmaline)", theme: "#ff6b6b", image: "/minerals/91-watermelon-tourmaline.webp", messages: ["表裡如一，做真實的自己。", "生命中的甜蜜值得品嚐。", "我長得像西瓜，你的進度卻還在播種。"] },
   { name: "黃色方解石 (Yellow Calcite)", theme: "#ffd700", image: "/minerals/92-yellow-calcite.webp", messages: ["自信的光芒從內心散發。", "積極的態度能改變一切。", "這麼陽光的黃，照不亮你拖延的黑暗面。"] },
-  { name: "菱錳礦 (Manganite)", theme: "#2f4f4f", image: "/minerals/93-manganite.webp", messages: ["在黑暗中也能發現光芒。", "深沉的力量正在積累。", "我這麼低調的黑，比你高調的拖延還有質感。"] },
+  { name: "水錳礦 (Manganite)", theme: "#2f4f4f", image: "/minerals/93-manganite.webp", messages: ["在黑暗中也能發現光芒。", "深沉的力量正在積累。", "我這麼低調的黑，比你高調的拖延還有質感。"] },
   { name: "金綠寶石 (Chrysoberyl)", theme: "#9acd32", image: "/minerals/94-chrysoberyl.webp", messages: ["堅持讓你與眾不同。", "閃耀的未來正在等著你。", "我是貓眼石的本尊，你是拖延症的代言人。"] },
-  { name: "藍銅鈣石 (Cavansite)", theme: "#4169e1", image: "/minerals/95-cavansite.webp", messages: ["稀有的才華值得被珍惜。", "讓思緒像藍天一樣開闊。", "我這麼稀有，你的準時交稿更稀有。"] },
+  { name: "水矽釩鈣石 (Cavansite)", theme: "#4169e1", image: "/minerals/95-cavansite.webp", messages: ["稀有的才華值得被珍惜。", "讓思緒像藍天一樣開闘。", "我這麼稀有，你的準時交稿更稀有。"] },
   { name: "鉻鉛礦 (Crocoite)", theme: "#ff4500", image: "/minerals/96-crocoite.webp", messages: ["熱情是創作最好的燃料。", "鮮豔的色彩代表豐富的生命力。", "我這麼橘紅，就像你被催稿時的臉色。"] },
   { name: "銀星石 (Astrophyllite)", theme: "#cd7f32", image: "/minerals/97-astrophyllite.webp", messages: ["像星星一樣放射光芒，你的才華終將被看見。", "金色的葉片提醒你，成長是向外擴展的。", "我長得像星爆，你的進度卻像黑洞一樣停滯。"] },
   { name: "星光粉晶 (Star Rose Quartz)", theme: "#ffb7c5", image: "/minerals/98-star-rose-quartz.webp", messages: ["愛的光芒從心中放射。", "你值得擁有閃耀的幸福。", "我有六芒星，你有六百個未完成的想法。"] },

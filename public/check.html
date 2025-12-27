@@ -1,204 +1,658 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LITHOS 礦石檢查表</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #1a1a2e; 
-      color: #fff; 
+      background: #1a1a2e;
+      color: #fff;
       padding: 10px;
       font-size: 10px;
     }
-    h1 { text-align: center; margin-bottom: 10px; font-size: 16px; }
-    .updated { text-align: center; color: #888; margin-bottom: 10px; font-size: 9px; }
-    table { border-collapse: collapse; width: 100%; }
-    th, td { 
-      border: 1px solid #333; 
-      padding: 2px; 
-      text-align: center; 
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .updated {
+      text-align: center;
+      color: #888;
+      margin-bottom: 10px;
+      font-size: 9px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #333;
+      padding: 2px;
+      text-align: center;
       vertical-align: top;
     }
-    th { background: #2a2a4e; font-size: 9px; }
-    .row-header { 
-      background: #2a2a4e; 
-      font-weight: bold; 
+
+    th {
+      background: #2a2a4e;
+      font-size: 9px;
+    }
+
+    .row-header {
+      background: #2a2a4e;
+      font-weight: bold;
       width: 50px;
       font-size: 9px;
     }
+
     .mineral-cell {
       width: 9%;
       padding: 3px;
     }
+
     .mineral-cell img {
-      width: 50px;
-      height: 50px;
+      width: 80px;
+      height: 80px;
       object-fit: cover;
       border-radius: 4px;
       background: #333;
     }
-    .mineral-num { font-size: 8px; color: #888; }
-    .mineral-en { font-size: 7px; color: #aaa; margin-top: 1px; }
-    .mineral-zh { font-size: 8px; color: #fff; margin-top: 1px; }
+
+    .mineral-num {
+      font-size: 8px;
+      color: #888;
+    }
+
+    .mineral-en {
+      font-size: 7px;
+      color: #aaa;
+      margin-top: 1px;
+    }
+
+    .mineral-zh {
+      font-size: 8px;
+      color: #fff;
+      margin-top: 1px;
+    }
   </style>
 </head>
+
 <body>
   <h1>🪨 LITHOS 礦石檢查表</h1>
   <p class="updated">最後更新: 2024-12-27</p>
-  
+
   <table>
     <thead>
       <tr>
         <th></th>
-        <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
-        <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
       </tr>
     </thead>
     <tbody>
       <!-- Row 1-10 -->
       <tr>
         <td class="row-header">1-10</td>
-        <td class="mineral-cell"><img src="/minerals/01-imperial-topaz-v3.webp" alt="01"><div class="mineral-num">#01</div><div class="mineral-en">Imperial Topaz</div><div class="mineral-zh">帝王拓帕石</div></td>
-        <td class="mineral-cell"><img src="/minerals/02-amethyst.webp" alt="02"><div class="mineral-num">#02</div><div class="mineral-en">Amethyst</div><div class="mineral-zh">紫水晶</div></td>
-        <td class="mineral-cell"><img src="/minerals/03-labradorite.webp" alt="03"><div class="mineral-num">#03</div><div class="mineral-en">Labradorite</div><div class="mineral-zh">拉長石</div></td>
-        <td class="mineral-cell"><img src="/minerals/04-rose-quartz.webp" alt="04"><div class="mineral-num">#04</div><div class="mineral-en">Rose Quartz</div><div class="mineral-zh">粉晶</div></td>
-        <td class="mineral-cell"><img src="/minerals/05-obsidian.webp" alt="05"><div class="mineral-num">#05</div><div class="mineral-en">Obsidian</div><div class="mineral-zh">黑曜石</div></td>
-        <td class="mineral-cell"><img src="/minerals/06-aquamarine.webp" alt="06"><div class="mineral-num">#06</div><div class="mineral-en">Aquamarine</div><div class="mineral-zh">海藍寶</div></td>
-        <td class="mineral-cell"><img src="/minerals/07-amber.webp" alt="07"><div class="mineral-num">#07</div><div class="mineral-en">Amber</div><div class="mineral-zh">琥珀</div></td>
-        <td class="mineral-cell"><img src="/minerals/08-ruby.webp" alt="08"><div class="mineral-num">#08</div><div class="mineral-en">Ruby</div><div class="mineral-zh">紅寶石</div></td>
-        <td class="mineral-cell"><img src="/minerals/09-jade.webp" alt="09"><div class="mineral-num">#09</div><div class="mineral-en">Jade</div><div class="mineral-zh">翡翠</div></td>
-        <td class="mineral-cell"><img src="/minerals/10-diamond.webp" alt="10"><div class="mineral-num">#10</div><div class="mineral-en">Diamond</div><div class="mineral-zh">鑽石</div></td>
+        <td class="mineral-cell"><img src="/minerals/01-imperial-topaz-v3.webp">
+          <div class="mineral-num">#01</div>
+          <div class="mineral-en">Imperial Topaz</div>
+          <div class="mineral-zh">帝王拓帕石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/02-amethyst.webp">
+          <div class="mineral-num">#02</div>
+          <div class="mineral-en">Amethyst</div>
+          <div class="mineral-zh">紫水晶</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/03-labradorite.webp">
+          <div class="mineral-num">#03</div>
+          <div class="mineral-en">Labradorite</div>
+          <div class="mineral-zh">拉長石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/04-rose-quartz.webp">
+          <div class="mineral-num">#04</div>
+          <div class="mineral-en">Rose Quartz</div>
+          <div class="mineral-zh">粉晶</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/05-obsidian.webp">
+          <div class="mineral-num">#05</div>
+          <div class="mineral-en">Obsidian</div>
+          <div class="mineral-zh">黑曜石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/06-aquamarine.webp">
+          <div class="mineral-num">#06</div>
+          <div class="mineral-en">Aquamarine</div>
+          <div class="mineral-zh">海藍寶</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/07-amber.webp">
+          <div class="mineral-num">#07</div>
+          <div class="mineral-en">Amber</div>
+          <div class="mineral-zh">琥珀</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/08-ruby.webp">
+          <div class="mineral-num">#08</div>
+          <div class="mineral-en">Ruby</div>
+          <div class="mineral-zh">紅寶石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/09-jade.webp">
+          <div class="mineral-num">#09</div>
+          <div class="mineral-en">Jade</div>
+          <div class="mineral-zh">翡翠</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/10-diamond.webp">
+          <div class="mineral-num">#10</div>
+          <div class="mineral-en">Diamond</div>
+          <div class="mineral-zh">鑽石</div>
+        </td>
       </tr>
       <!-- Row 11-20 -->
       <tr>
         <td class="row-header">11-20</td>
-        <td class="mineral-cell"><img src="/minerals/11-moonstone.webp" alt="11"><div class="mineral-num">#11</div><div class="mineral-en">Moonstone</div><div class="mineral-zh">月光石</div></td>
-        <td class="mineral-cell"><img src="/minerals/12-malachite.webp" alt="12"><div class="mineral-num">#12</div><div class="mineral-en">Malachite</div><div class="mineral-zh">孔雀石</div></td>
-        <td class="mineral-cell"><img src="/minerals/13-fluorite.webp" alt="13"><div class="mineral-num">#13</div><div class="mineral-en">Fluorite</div><div class="mineral-zh">螢石</div></td>
-        <td class="mineral-cell"><img src="/minerals/14-citrine-v3.webp" alt="14"><div class="mineral-num">#14</div><div class="mineral-en">Citrine</div><div class="mineral-zh">黃水晶</div></td>
-        <td class="mineral-cell"><img src="/minerals/15-garnet.webp" alt="15"><div class="mineral-num">#15</div><div class="mineral-en">Garnet</div><div class="mineral-zh">石榴石</div></td>
-        <td class="mineral-cell"><img src="/minerals/16-agate.webp" alt="16"><div class="mineral-num">#16</div><div class="mineral-en">Agate</div><div class="mineral-zh">瑪瑙</div></td>
-        <td class="mineral-cell"><img src="/minerals/17-rhodochrosite.webp" alt="17"><div class="mineral-num">#17</div><div class="mineral-en">Rhodochrosite</div><div class="mineral-zh">紅紋石</div></td>
-        <td class="mineral-cell"><img src="/minerals/18-sugilite.webp" alt="18"><div class="mineral-num">#18</div><div class="mineral-en">Sugilite</div><div class="mineral-zh">舒俱徠石</div></td>
-        <td class="mineral-cell"><img src="/minerals/19-amazonite.webp" alt="19"><div class="mineral-num">#19</div><div class="mineral-en">Amazonite</div><div class="mineral-zh">天河石</div></td>
-        <td class="mineral-cell"><img src="/minerals/20-rutilated-quartz.webp" alt="20"><div class="mineral-num">#20</div><div class="mineral-en">Rutilated Quartz</div><div class="mineral-zh">鈦晶</div></td>
+        <td class="mineral-cell"><img src="/minerals/11-moonstone.webp">
+          <div class="mineral-num">#11</div>
+          <div class="mineral-en">Moonstone</div>
+          <div class="mineral-zh">月光石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/12-malachite.webp">
+          <div class="mineral-num">#12</div>
+          <div class="mineral-en">Malachite</div>
+          <div class="mineral-zh">孔雀石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/13-fluorite.webp">
+          <div class="mineral-num">#13</div>
+          <div class="mineral-en">Fluorite</div>
+          <div class="mineral-zh">螢石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/14-citrine-v3.webp">
+          <div class="mineral-num">#14</div>
+          <div class="mineral-en">Citrine</div>
+          <div class="mineral-zh">黃水晶</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/15-garnet.webp">
+          <div class="mineral-num">#15</div>
+          <div class="mineral-en">Garnet</div>
+          <div class="mineral-zh">石榴石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/16-agate.webp">
+          <div class="mineral-num">#16</div>
+          <div class="mineral-en">Agate</div>
+          <div class="mineral-zh">瑪瑙</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/17-rhodochrosite.webp">
+          <div class="mineral-num">#17</div>
+          <div class="mineral-en">Rhodochrosite</div>
+          <div class="mineral-zh">紅紋石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/18-sugilite.webp">
+          <div class="mineral-num">#18</div>
+          <div class="mineral-en">Sugilite</div>
+          <div class="mineral-zh">舒俱徠石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/19-amazonite.webp">
+          <div class="mineral-num">#19</div>
+          <div class="mineral-en">Amazonite</div>
+          <div class="mineral-zh">天河石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/20-rutilated-quartz.webp">
+          <div class="mineral-num">#20</div>
+          <div class="mineral-en">Rutilated Quartz</div>
+          <div class="mineral-zh">鈦晶</div>
+        </td>
       </tr>
       <!-- Row 21-30 -->
       <tr>
         <td class="row-header">21-30</td>
-        <td class="mineral-cell"><img src="/minerals/21-tigers-eye.webp" alt="21"><div class="mineral-num">#21</div><div class="mineral-en">Tiger's Eye</div><div class="mineral-zh">虎眼石</div></td>
-        <td class="mineral-cell"><img src="/minerals/22-onyx.webp" alt="22"><div class="mineral-num">#22</div><div class="mineral-en">Onyx</div><div class="mineral-zh">黑瑪瑙</div></td>
-        <td class="mineral-cell"><img src="/minerals/23-opal.webp" alt="23"><div class="mineral-num">#23</div><div class="mineral-en">Opal</div><div class="mineral-zh">蛋白石</div></td>
-        <td class="mineral-cell"><img src="/minerals/24-peridot.webp" alt="24"><div class="mineral-num">#24</div><div class="mineral-en">Peridot</div><div class="mineral-zh">橄欖石</div></td>
-        <td class="mineral-cell"><img src="/minerals/25-tanzanite.webp" alt="25"><div class="mineral-num">#25</div><div class="mineral-en">Tanzanite</div><div class="mineral-zh">坦桑石</div></td>
-        <td class="mineral-cell"><img src="/minerals/26-kyanite.webp" alt="26"><div class="mineral-num">#26</div><div class="mineral-en">Kyanite</div><div class="mineral-zh">藍晶石</div></td>
-        <td class="mineral-cell"><img src="/minerals/27-red-jasper.webp" alt="27"><div class="mineral-num">#27</div><div class="mineral-en">Red Jasper</div><div class="mineral-zh">紅碧玉</div></td>
-        <td class="mineral-cell"><img src="/minerals/28-calcite.webp" alt="28"><div class="mineral-num">#28</div><div class="mineral-en">Calcite</div><div class="mineral-zh">方解石</div></td>
-        <td class="mineral-cell"><img src="/minerals/29-celestite.webp" alt="29"><div class="mineral-num">#29</div><div class="mineral-en">Celestite</div><div class="mineral-zh">天青石</div></td>
-        <td class="mineral-cell"><img src="/minerals/30-pyrite.webp" alt="30"><div class="mineral-num">#30</div><div class="mineral-en">Pyrite</div><div class="mineral-zh">黃鐵礦</div></td>
+        <td class="mineral-cell"><img src="/minerals/21-tigers-eye.webp">
+          <div class="mineral-num">#21</div>
+          <div class="mineral-en">Tiger's Eye</div>
+          <div class="mineral-zh">虎眼石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/22-onyx.webp">
+          <div class="mineral-num">#22</div>
+          <div class="mineral-en">Onyx</div>
+          <div class="mineral-zh">黑瑪瑙</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/23-opal.webp">
+          <div class="mineral-num">#23</div>
+          <div class="mineral-en">Opal</div>
+          <div class="mineral-zh">蛋白石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/24-peridot.webp">
+          <div class="mineral-num">#24</div>
+          <div class="mineral-en">Peridot</div>
+          <div class="mineral-zh">橄欖石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/25-tanzanite.webp">
+          <div class="mineral-num">#25</div>
+          <div class="mineral-en">Tanzanite</div>
+          <div class="mineral-zh">坦桑石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/26-kyanite.webp">
+          <div class="mineral-num">#26</div>
+          <div class="mineral-en">Kyanite</div>
+          <div class="mineral-zh">藍晶石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/27-red-jasper.webp">
+          <div class="mineral-num">#27</div>
+          <div class="mineral-en">Red Jasper</div>
+          <div class="mineral-zh">紅碧玉</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/28-calcite.webp">
+          <div class="mineral-num">#28</div>
+          <div class="mineral-en">Calcite</div>
+          <div class="mineral-zh">方解石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/29-celestite.webp">
+          <div class="mineral-num">#29</div>
+          <div class="mineral-en">Celestite</div>
+          <div class="mineral-zh">天青石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/30-pyrite.webp">
+          <div class="mineral-num">#30</div>
+          <div class="mineral-en">Pyrite</div>
+          <div class="mineral-zh">黃鐵礦</div>
+        </td>
       </tr>
       <!-- Row 31-40 -->
       <tr>
         <td class="row-header">31-40</td>
-        <td class="mineral-cell"><img src="/minerals/31-sunstone.webp" alt="31"><div class="mineral-num">#31</div><div class="mineral-en">Sunstone</div><div class="mineral-zh">太陽石</div></td>
-        <td class="mineral-cell"><img src="/minerals/32-turquoise.webp" alt="32"><div class="mineral-num">#32</div><div class="mineral-en">Turquoise</div><div class="mineral-zh">綠松石</div></td>
-        <td class="mineral-cell"><img src="/minerals/33-charoite.webp" alt="33"><div class="mineral-num">#33</div><div class="mineral-en">Charoite</div><div class="mineral-zh">紫龍晶</div></td>
-        <td class="mineral-cell"><img src="/minerals/34-clear-quartz.webp" alt="34"><div class="mineral-num">#34</div><div class="mineral-en">Clear Quartz</div><div class="mineral-zh">白水晶</div></td>
-        <td class="mineral-cell"><img src="/minerals/35-bloodstone.webp" alt="35"><div class="mineral-num">#35</div><div class="mineral-en">Bloodstone</div><div class="mineral-zh">血石</div></td>
-        <td class="mineral-cell"><img src="/minerals/36-pearl.webp" alt="36"><div class="mineral-num">#36</div><div class="mineral-en">Pearl</div><div class="mineral-zh">珍珠</div></td>
-        <td class="mineral-cell"><img src="/minerals/37-prehnite.webp" alt="37"><div class="mineral-num">#37</div><div class="mineral-en">Prehnite</div><div class="mineral-zh">葡萄石</div></td>
-        <td class="mineral-cell"><img src="/minerals/38-sodalite.webp" alt="38"><div class="mineral-num">#38</div><div class="mineral-en">Sodalite</div><div class="mineral-zh">蘇打石</div></td>
-        <td class="mineral-cell"><img src="/minerals/39-lepidolite.webp" alt="39"><div class="mineral-num">#39</div><div class="mineral-en">Lepidolite</div><div class="mineral-zh">鋰雲母</div></td>
-        <td class="mineral-cell"><img src="/minerals/40-diopside.webp" alt="40"><div class="mineral-num">#40</div><div class="mineral-en">Diopside</div><div class="mineral-zh">透輝石</div></td>
+        <td class="mineral-cell"><img src="/minerals/31-sunstone.webp">
+          <div class="mineral-num">#31</div>
+          <div class="mineral-en">Sunstone</div>
+          <div class="mineral-zh">太陽石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/32-turquoise.webp">
+          <div class="mineral-num">#32</div>
+          <div class="mineral-en">Turquoise</div>
+          <div class="mineral-zh">綠松石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/33-charoite.webp">
+          <div class="mineral-num">#33</div>
+          <div class="mineral-en">Charoite</div>
+          <div class="mineral-zh">紫龍晶</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/34-clear-quartz.webp">
+          <div class="mineral-num">#34</div>
+          <div class="mineral-en">Clear Quartz</div>
+          <div class="mineral-zh">白水晶</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/35-bloodstone.webp">
+          <div class="mineral-num">#35</div>
+          <div class="mineral-en">Bloodstone</div>
+          <div class="mineral-zh">血石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/36-pearl.webp">
+          <div class="mineral-num">#36</div>
+          <div class="mineral-en">Pearl</div>
+          <div class="mineral-zh">珍珠</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/37-prehnite.webp">
+          <div class="mineral-num">#37</div>
+          <div class="mineral-en">Prehnite</div>
+          <div class="mineral-zh">葡萄石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/38-sodalite.webp">
+          <div class="mineral-num">#38</div>
+          <div class="mineral-en">Sodalite</div>
+          <div class="mineral-zh">蘇打石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/39-lepidolite.webp">
+          <div class="mineral-num">#39</div>
+          <div class="mineral-en">Lepidolite</div>
+          <div class="mineral-zh">鋰雲母</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/40-diopside.webp">
+          <div class="mineral-num">#40</div>
+          <div class="mineral-en">Diopside</div>
+          <div class="mineral-zh">透輝石</div>
+        </td>
       </tr>
       <!-- Row 41-50 -->
       <tr>
         <td class="row-header">41-50</td>
-        <td class="mineral-cell"><img src="/minerals/41-zircon.webp" alt="41"><div class="mineral-num">#41</div><div class="mineral-en">Zircon</div><div class="mineral-zh">鋯石</div></td>
-        <td class="mineral-cell"><img src="/minerals/42-anyolite.webp" alt="42"><div class="mineral-num">#42</div><div class="mineral-en">Anyolite</div><div class="mineral-zh">紅寶黝簾石</div></td>
-        <td class="mineral-cell"><img src="/minerals/43-spinel.webp" alt="43"><div class="mineral-num">#43</div><div class="mineral-en">Spinel</div><div class="mineral-zh">尖晶石</div></td>
-        <td class="mineral-cell"><img src="/minerals/44-azurite.webp" alt="44"><div class="mineral-num">#44</div><div class="mineral-en">Azurite</div><div class="mineral-zh">藍銅礦</div></td>
-        <td class="mineral-cell"><img src="/minerals/45-moldavite.webp" alt="45"><div class="mineral-num">#45</div><div class="mineral-en">Moldavite</div><div class="mineral-zh">捷克隕石</div></td>
-        <td class="mineral-cell"><img src="/minerals/46-kunzite.webp" alt="46"><div class="mineral-num">#46</div><div class="mineral-en">Kunzite</div><div class="mineral-zh">紫鋰輝石</div></td>
-        <td class="mineral-cell"><img src="/minerals/47-larimar.webp" alt="47"><div class="mineral-num">#47</div><div class="mineral-en">Larimar</div><div class="mineral-zh">拉利瑪</div></td>
-        <td class="mineral-cell"><img src="/minerals/48-hematite.webp" alt="48"><div class="mineral-num">#48</div><div class="mineral-en">Hematite</div><div class="mineral-zh">赤鐵礦</div></td>
-        <td class="mineral-cell"><img src="/minerals/49-blue-chalcedony.webp" alt="49"><div class="mineral-num">#49</div><div class="mineral-en">Blue Chalcedony</div><div class="mineral-zh">藍玉髓</div></td>
-        <td class="mineral-cell"><img src="/minerals/50-black-star.webp" alt="50"><div class="mineral-num">#50</div><div class="mineral-en">Black Star</div><div class="mineral-zh">黑星石</div></td>
+        <td class="mineral-cell"><img src="/minerals/41-zircon.webp">
+          <div class="mineral-num">#41</div>
+          <div class="mineral-en">Zircon</div>
+          <div class="mineral-zh">鋯石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/42-anyolite.webp">
+          <div class="mineral-num">#42</div>
+          <div class="mineral-en">Anyolite</div>
+          <div class="mineral-zh">紅寶黝簾石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/43-spinel.webp">
+          <div class="mineral-num">#43</div>
+          <div class="mineral-en">Spinel</div>
+          <div class="mineral-zh">尖晶石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/44-azurite.webp">
+          <div class="mineral-num">#44</div>
+          <div class="mineral-en">Azurite</div>
+          <div class="mineral-zh">藍銅礦</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/45-moldavite.webp">
+          <div class="mineral-num">#45</div>
+          <div class="mineral-en">Moldavite</div>
+          <div class="mineral-zh">捷克隕石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/46-kunzite.webp">
+          <div class="mineral-num">#46</div>
+          <div class="mineral-en">Kunzite</div>
+          <div class="mineral-zh">紫鋰輝石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/47-larimar.webp">
+          <div class="mineral-num">#47</div>
+          <div class="mineral-en">Larimar</div>
+          <div class="mineral-zh">拉利瑪</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/48-hematite.webp">
+          <div class="mineral-num">#48</div>
+          <div class="mineral-en">Hematite</div>
+          <div class="mineral-zh">赤鐵礦</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/49-blue-chalcedony.webp">
+          <div class="mineral-num">#49</div>
+          <div class="mineral-en">Blue Chalcedony</div>
+          <div class="mineral-zh">藍玉髓</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/50-black-star.webp">
+          <div class="mineral-num">#50</div>
+          <div class="mineral-en">Black Star</div>
+          <div class="mineral-zh">黑星石</div>
+        </td>
       </tr>
       <!-- Row 51-60 -->
       <tr>
         <td class="row-header">51-60</td>
-        <td class="mineral-cell"><img src="/minerals/51-alexandrite.webp" alt="51"><div class="mineral-num">#51</div><div class="mineral-en">Alexandrite</div><div class="mineral-zh">亞歷山大變石</div></td>
-        <td class="mineral-cell"><img src="/minerals/52-sphalerite.webp" alt="52"><div class="mineral-num">#52</div><div class="mineral-en">Sphalerite</div><div class="mineral-zh">閃鋅礦</div></td>
-        <td class="mineral-cell"><img src="/minerals/53-chrysocolla.webp" alt="53"><div class="mineral-num">#53</div><div class="mineral-en">Chrysocolla</div><div class="mineral-zh">矽孔雀石</div></td>
-        <td class="mineral-cell"><img src="/minerals/54-rhodonite.webp" alt="54"><div class="mineral-num">#54</div><div class="mineral-en">Rhodonite</div><div class="mineral-zh">薔薇輝石</div></td>
-        <td class="mineral-cell"><img src="/minerals/55-aventurine.webp" alt="55"><div class="mineral-num">#55</div><div class="mineral-en">Aventurine</div><div class="mineral-zh">砂金石英</div></td>
-        <td class="mineral-cell"><img src="/minerals/56-iolite.webp" alt="56"><div class="mineral-num">#56</div><div class="mineral-en">Iolite</div><div class="mineral-zh">堇青石</div></td>
-        <td class="mineral-cell"><img src="/minerals/57-serpentine.webp" alt="57"><div class="mineral-num">#57</div><div class="mineral-en">Serpentine</div><div class="mineral-zh">蛇紋石</div></td>
-        <td class="mineral-cell"><img src="/minerals/58-danburite.webp" alt="58"><div class="mineral-num">#58</div><div class="mineral-en">Danburite</div><div class="mineral-zh">賽黃晶</div></td>
-        <td class="mineral-cell"><img src="/minerals/59-howlite.webp" alt="59"><div class="mineral-num">#59</div><div class="mineral-en">Howlite</div><div class="mineral-zh">白紋石</div></td>
-        <td class="mineral-cell"><img src="/minerals/60-carnelian.webp" alt="60"><div class="mineral-num">#60</div><div class="mineral-en">Carnelian</div><div class="mineral-zh">紅玉髓</div></td>
+        <td class="mineral-cell"><img src="/minerals/51-alexandrite.webp">
+          <div class="mineral-num">#51</div>
+          <div class="mineral-en">Alexandrite</div>
+          <div class="mineral-zh">亞歷山大變石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/52-sphalerite.webp">
+          <div class="mineral-num">#52</div>
+          <div class="mineral-en">Sphalerite</div>
+          <div class="mineral-zh">閃鋅礦</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/53-chrysocolla.webp">
+          <div class="mineral-num">#53</div>
+          <div class="mineral-en">Chrysocolla</div>
+          <div class="mineral-zh">矽孔雀石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/54-rhodonite.webp">
+          <div class="mineral-num">#54</div>
+          <div class="mineral-en">Rhodonite</div>
+          <div class="mineral-zh">薔薇輝石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/55-aventurine.webp">
+          <div class="mineral-num">#55</div>
+          <div class="mineral-en">Aventurine</div>
+          <div class="mineral-zh">砂金石英</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/56-iolite.webp">
+          <div class="mineral-num">#56</div>
+          <div class="mineral-en">Iolite</div>
+          <div class="mineral-zh">堇青石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/57-serpentine.webp">
+          <div class="mineral-num">#57</div>
+          <div class="mineral-en">Serpentine</div>
+          <div class="mineral-zh">蛇紋石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/58-danburite.webp">
+          <div class="mineral-num">#58</div>
+          <div class="mineral-en">Danburite</div>
+          <div class="mineral-zh">賽黃晶</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/59-howlite.webp">
+          <div class="mineral-num">#59</div>
+          <div class="mineral-en">Howlite</div>
+          <div class="mineral-zh">白紋石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/60-carnelian.webp">
+          <div class="mineral-num">#60</div>
+          <div class="mineral-en">Carnelian</div>
+          <div class="mineral-zh">紅玉髓</div>
+        </td>
       </tr>
       <!-- Row 61-70 -->
       <tr>
         <td class="row-header">61-70</td>
-        <td class="mineral-cell"><img src="/minerals/61-moss-agate.webp" alt="61"><div class="mineral-num">#61</div><div class="mineral-en">Moss Agate</div><div class="mineral-zh">苔紋瑪瑙</div></td>
-        <td class="mineral-cell"><img src="/minerals/62-blue-lace-agate.webp" alt="62"><div class="mineral-num">#62</div><div class="mineral-en">Blue Lace Agate</div><div class="mineral-zh">藍紋瑪瑙</div></td>
-        <td class="mineral-cell"><img src="/minerals/63-fire-opal.webp" alt="63"><div class="mineral-num">#63</div><div class="mineral-en">Fire Opal</div><div class="mineral-zh">火蛋白石</div></td>
-        <td class="mineral-cell"><img src="/minerals/64-selenite.webp" alt="64"><div class="mineral-num">#64</div><div class="mineral-en">Selenite</div><div class="mineral-zh">透石膏</div></td>
-        <td class="mineral-cell"><img src="/minerals/65-apache-tear.webp" alt="65"><div class="mineral-num">#65</div><div class="mineral-en">Apache Tear</div><div class="mineral-zh">阿帕契之淚</div></td>
-        <td class="mineral-cell"><img src="/minerals/66-shungite.webp" alt="66"><div class="mineral-num">#66</div><div class="mineral-en">Shungite</div><div class="mineral-zh">次石墨</div></td>
-        <td class="mineral-cell"><img src="/minerals/67-emerald.webp" alt="67"><div class="mineral-num">#67</div><div class="mineral-en">Emerald</div><div class="mineral-zh">祖母綠</div></td>
-        <td class="mineral-cell"><img src="/minerals/68-aqua-aura.webp" alt="68"><div class="mineral-num">#68</div><div class="mineral-en">Aqua Aura</div><div class="mineral-zh">水光水晶</div></td>
-        <td class="mineral-cell"><img src="/minerals/69-smoky-quartz.webp" alt="69"><div class="mineral-num">#69</div><div class="mineral-en">Smoky Quartz</div><div class="mineral-zh">煙水晶</div></td>
-        <td class="mineral-cell"><img src="/minerals/70-bismuth.webp" alt="70"><div class="mineral-num">#70</div><div class="mineral-en">Bismuth</div><div class="mineral-zh">鉍</div></td>
+        <td class="mineral-cell"><img src="/minerals/61-moss-agate.webp">
+          <div class="mineral-num">#61</div>
+          <div class="mineral-en">Moss Agate</div>
+          <div class="mineral-zh">苔紋瑪瑙</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/62-blue-lace-agate.webp">
+          <div class="mineral-num">#62</div>
+          <div class="mineral-en">Blue Lace Agate</div>
+          <div class="mineral-zh">藍紋瑪瑙</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/63-fire-opal.webp">
+          <div class="mineral-num">#63</div>
+          <div class="mineral-en">Fire Opal</div>
+          <div class="mineral-zh">火蛋白石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/64-selenite.webp">
+          <div class="mineral-num">#64</div>
+          <div class="mineral-en">Selenite</div>
+          <div class="mineral-zh">透石膏</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/65-apache-tear.webp">
+          <div class="mineral-num">#65</div>
+          <div class="mineral-en">Apache Tear</div>
+          <div class="mineral-zh">阿帕契之淚</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/66-shungite.webp">
+          <div class="mineral-num">#66</div>
+          <div class="mineral-en">Shungite</div>
+          <div class="mineral-zh">次石墨</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/67-emerald.webp">
+          <div class="mineral-num">#67</div>
+          <div class="mineral-en">Emerald</div>
+          <div class="mineral-zh">祖母綠</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/68-aqua-aura.webp">
+          <div class="mineral-num">#68</div>
+          <div class="mineral-en">Aqua Aura</div>
+          <div class="mineral-zh">水光水晶</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/69-smoky-quartz.webp">
+          <div class="mineral-num">#69</div>
+          <div class="mineral-en">Smoky Quartz</div>
+          <div class="mineral-zh">煙水晶</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/70-bismuth.webp">
+          <div class="mineral-num">#70</div>
+          <div class="mineral-en">Bismuth</div>
+          <div class="mineral-zh">鉍</div>
+        </td>
       </tr>
       <!-- Row 71-80 -->
       <tr>
         <td class="row-header">71-80</td>
-        <td class="mineral-cell"><img src="/minerals/71-sapphire.webp" alt="71"><div class="mineral-num">#71</div><div class="mineral-en">Sapphire</div><div class="mineral-zh">藍寶石</div></td>
-        <td class="mineral-cell"><img src="/minerals/72-chrysoprase.webp" alt="72"><div class="mineral-num">#72</div><div class="mineral-en">Chrysoprase</div><div class="mineral-zh">綠玉髓</div></td>
-        <td class="mineral-cell"><img src="/minerals/73-black-tourmaline.webp" alt="73"><div class="mineral-num">#73</div><div class="mineral-en">Black Tourmaline</div><div class="mineral-zh">黑碧璽</div></td>
-        <td class="mineral-cell"><img src="/minerals/74-apatite.webp" alt="74"><div class="mineral-num">#74</div><div class="mineral-en">Apatite</div><div class="mineral-zh">磷灰石</div></td>
-        <td class="mineral-cell"><img src="/minerals/75-rainbow-moonstone.webp" alt="75"><div class="mineral-num">#75</div><div class="mineral-en">Rainbow Moonstone</div><div class="mineral-zh">彩虹月光石</div></td>
-        <td class="mineral-cell"><img src="/minerals/76-ocean-jasper.webp" alt="76"><div class="mineral-num">#76</div><div class="mineral-en">Ocean Jasper</div><div class="mineral-zh">海洋碧玉</div></td>
-        <td class="mineral-cell"><img src="/minerals/77-phantom-quartz.webp" alt="77"><div class="mineral-num">#77</div><div class="mineral-en">Phantom Quartz</div><div class="mineral-zh">幽靈水晶</div></td>
-        <td class="mineral-cell"><img src="/minerals/78-apophyllite.webp" alt="78"><div class="mineral-num">#78</div><div class="mineral-en">Apophyllite</div><div class="mineral-zh">魚眼石</div></td>
-        <td class="mineral-cell"><img src="/minerals/79-aragonite.webp" alt="79"><div class="mineral-num">#79</div><div class="mineral-en">Aragonite</div><div class="mineral-zh">霰石</div></td>
-        <td class="mineral-cell"><img src="/minerals/80-pietersite.webp" alt="80"><div class="mineral-num">#80</div><div class="mineral-en">Pietersite</div><div class="mineral-zh">彼得石</div></td>
+        <td class="mineral-cell"><img src="/minerals/71-sapphire.webp">
+          <div class="mineral-num">#71</div>
+          <div class="mineral-en">Sapphire</div>
+          <div class="mineral-zh">藍寶石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/72-chrysoprase.webp">
+          <div class="mineral-num">#72</div>
+          <div class="mineral-en">Chrysoprase</div>
+          <div class="mineral-zh">綠玉髓</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/73-black-tourmaline.webp">
+          <div class="mineral-num">#73</div>
+          <div class="mineral-en">Black Tourmaline</div>
+          <div class="mineral-zh">黑碧璽</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/74-apatite.webp">
+          <div class="mineral-num">#74</div>
+          <div class="mineral-en">Apatite</div>
+          <div class="mineral-zh">磷灰石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/75-rainbow-moonstone.webp">
+          <div class="mineral-num">#75</div>
+          <div class="mineral-en">Rainbow Moonstone</div>
+          <div class="mineral-zh">彩虹月光石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/76-ocean-jasper.webp">
+          <div class="mineral-num">#76</div>
+          <div class="mineral-en">Ocean Jasper</div>
+          <div class="mineral-zh">海洋碧玉</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/77-phantom-quartz.webp">
+          <div class="mineral-num">#77</div>
+          <div class="mineral-en">Phantom Quartz</div>
+          <div class="mineral-zh">幽靈水晶</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/78-apophyllite.webp">
+          <div class="mineral-num">#78</div>
+          <div class="mineral-en">Apophyllite</div>
+          <div class="mineral-zh">魚眼石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/79-aragonite.webp">
+          <div class="mineral-num">#79</div>
+          <div class="mineral-en">Aragonite</div>
+          <div class="mineral-zh">霰石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/80-pietersite.webp">
+          <div class="mineral-num">#80</div>
+          <div class="mineral-en">Pietersite</div>
+          <div class="mineral-zh">彼得石</div>
+        </td>
       </tr>
       <!-- Row 81-90 -->
       <tr>
         <td class="row-header">81-90</td>
-        <td class="mineral-cell"><img src="/minerals/81-dioptase.webp" alt="81"><div class="mineral-num">#81</div><div class="mineral-en">Dioptase</div><div class="mineral-zh">翠銅礦</div></td>
-        <td class="mineral-cell"><img src="/minerals/82-cobaltoan-calcite.webp" alt="82"><div class="mineral-num">#82</div><div class="mineral-en">Cobaltoan Calcite</div><div class="mineral-zh">鈷方解石</div></td>
-        <td class="mineral-cell"><img src="/minerals/83-chalcopyrite.webp" alt="83"><div class="mineral-num">#83</div><div class="mineral-en">Chalcopyrite</div><div class="mineral-zh">黃銅礦</div></td>
-        <td class="mineral-cell"><img src="/minerals/84-wulfenite.webp" alt="84"><div class="mineral-num">#84</div><div class="mineral-en">Wulfenite</div><div class="mineral-zh">鉬鉛礦</div></td>
-        <td class="mineral-cell"><img src="/minerals/85-stilbite.webp" alt="85"><div class="mineral-num">#85</div><div class="mineral-en">Stilbite</div><div class="mineral-zh">輝沸石</div></td>
-        <td class="mineral-cell"><img src="/minerals/86-hemimorphite.webp" alt="86"><div class="mineral-num">#86</div><div class="mineral-en">Hemimorphite</div><div class="mineral-zh">異極礦</div></td>
-        <td class="mineral-cell"><img src="/minerals/87-epidote.webp" alt="87"><div class="mineral-num">#87</div><div class="mineral-en">Epidote</div><div class="mineral-zh">綠簾石</div></td>
-        <td class="mineral-cell"><img src="/minerals/88-angelite.webp" alt="88"><div class="mineral-num">#88</div><div class="mineral-en">Angelite</div><div class="mineral-zh">天使石</div></td>
-        <td class="mineral-cell"><img src="/minerals/89-tree-agate.webp" alt="89"><div class="mineral-num">#89</div><div class="mineral-en">Tree Agate</div><div class="mineral-zh">樹紋瑪瑙</div></td>
-        <td class="mineral-cell"><img src="/minerals/90-pink-opal.webp" alt="90"><div class="mineral-num">#90</div><div class="mineral-en">Pink Opal</div><div class="mineral-zh">粉紅蛋白石</div></td>
+        <td class="mineral-cell"><img src="/minerals/81-dioptase.webp">
+          <div class="mineral-num">#81</div>
+          <div class="mineral-en">Dioptase</div>
+          <div class="mineral-zh">翠銅礦</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/82-cobaltoan-calcite.webp">
+          <div class="mineral-num">#82</div>
+          <div class="mineral-en">Cobaltoan Calcite</div>
+          <div class="mineral-zh">鈷方解石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/83-chalcopyrite.webp">
+          <div class="mineral-num">#83</div>
+          <div class="mineral-en">Chalcopyrite</div>
+          <div class="mineral-zh">黃銅礦</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/84-wulfenite.webp">
+          <div class="mineral-num">#84</div>
+          <div class="mineral-en">Wulfenite</div>
+          <div class="mineral-zh">鉬鉛礦</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/85-stilbite.webp">
+          <div class="mineral-num">#85</div>
+          <div class="mineral-en">Stilbite</div>
+          <div class="mineral-zh">輝沸石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/86-hemimorphite.webp">
+          <div class="mineral-num">#86</div>
+          <div class="mineral-en">Hemimorphite</div>
+          <div class="mineral-zh">異極礦</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/87-epidote.webp">
+          <div class="mineral-num">#87</div>
+          <div class="mineral-en">Epidote</div>
+          <div class="mineral-zh">綠簾石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/88-angelite.webp">
+          <div class="mineral-num">#88</div>
+          <div class="mineral-en">Angelite</div>
+          <div class="mineral-zh">天使石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/89-tree-agate.webp">
+          <div class="mineral-num">#89</div>
+          <div class="mineral-en">Tree Agate</div>
+          <div class="mineral-zh">樹紋瑪瑙</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/90-pink-opal.webp">
+          <div class="mineral-num">#90</div>
+          <div class="mineral-en">Pink Opal</div>
+          <div class="mineral-zh">粉紅蛋白石</div>
+        </td>
       </tr>
       <!-- Row 91-100 -->
       <tr>
         <td class="row-header">91-100</td>
-        <td class="mineral-cell"><img src="/minerals/91-watermelon-tourmaline.webp" alt="91"><div class="mineral-num">#91</div><div class="mineral-en">Watermelon Tourmaline</div><div class="mineral-zh">西瓜碧璽</div></td>
-        <td class="mineral-cell"><img src="/minerals/92-yellow-calcite.webp" alt="92"><div class="mineral-num">#92</div><div class="mineral-en">Yellow Calcite</div><div class="mineral-zh">黃色方解石</div></td>
-        <td class="mineral-cell"><img src="/minerals/93-manganite.webp" alt="93"><div class="mineral-num">#93</div><div class="mineral-en">Manganite</div><div class="mineral-zh">菱錳礦</div></td>
-        <td class="mineral-cell"><img src="/minerals/94-chrysoberyl.webp" alt="94"><div class="mineral-num">#94</div><div class="mineral-en">Chrysoberyl</div><div class="mineral-zh">金綠寶石</div></td>
-        <td class="mineral-cell"><img src="/minerals/95-cavansite.webp" alt="95"><div class="mineral-num">#95</div><div class="mineral-en">Cavansite</div><div class="mineral-zh">藍銅鈣石</div></td>
-        <td class="mineral-cell"><img src="/minerals/96-crocoite.webp" alt="96"><div class="mineral-num">#96</div><div class="mineral-en">Crocoite</div><div class="mineral-zh">鉻鉛礦</div></td>
-        <td class="mineral-cell"><img src="/minerals/97-astrophyllite.webp" alt="97"><div class="mineral-num">#97</div><div class="mineral-en">Astrophyllite</div><div class="mineral-zh">銀星石</div></td>
-        <td class="mineral-cell"><img src="/minerals/98-star-rose-quartz.webp" alt="98"><div class="mineral-num">#98</div><div class="mineral-en">Star Rose Quartz</div><div class="mineral-zh">星光粉晶</div></td>
-        <td class="mineral-cell"><img src="/minerals/99-cinnabar.webp" alt="99"><div class="mineral-num">#99</div><div class="mineral-en">Cinnabar</div><div class="mineral-zh">辰砂</div></td>
-        <td class="mineral-cell"><img src="/minerals/100-rainbow-fluorite.webp" alt="100"><div class="mineral-num">#100</div><div class="mineral-en">Rainbow Fluorite</div><div class="mineral-zh">彩虹螢石</div></td>
+        <td class="mineral-cell"><img src="/minerals/91-watermelon-tourmaline.webp">
+          <div class="mineral-num">#91</div>
+          <div class="mineral-en">Watermelon Tourmaline</div>
+          <div class="mineral-zh">西瓜碧璽</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/92-yellow-calcite.webp">
+          <div class="mineral-num">#92</div>
+          <div class="mineral-en">Yellow Calcite</div>
+          <div class="mineral-zh">黃色方解石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/93-manganite.webp">
+          <div class="mineral-num">#93</div>
+          <div class="mineral-en">Manganite</div>
+          <div class="mineral-zh">水錳礦</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/94-chrysoberyl.webp">
+          <div class="mineral-num">#94</div>
+          <div class="mineral-en">Chrysoberyl</div>
+          <div class="mineral-zh">金綠寶石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/95-cavansite.webp">
+          <div class="mineral-num">#95</div>
+          <div class="mineral-en">Cavansite</div>
+          <div class="mineral-zh">水矽釩鈣石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/96-crocoite.webp">
+          <div class="mineral-num">#96</div>
+          <div class="mineral-en">Crocoite</div>
+          <div class="mineral-zh">鉻鉛礦</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/97-astrophyllite.webp">
+          <div class="mineral-num">#97</div>
+          <div class="mineral-en">Astrophyllite</div>
+          <div class="mineral-zh">銀星石</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/98-star-rose-quartz.webp">
+          <div class="mineral-num">#98</div>
+          <div class="mineral-en">Star Rose Quartz</div>
+          <div class="mineral-zh">星光粉晶</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/99-cinnabar.webp">
+          <div class="mineral-num">#99</div>
+          <div class="mineral-en">Cinnabar</div>
+          <div class="mineral-zh">辰砂</div>
+        </td>
+        <td class="mineral-cell"><img src="/minerals/100-rainbow-fluorite.webp">
+          <div class="mineral-num">#100</div>
+          <div class="mineral-en">Rainbow Fluorite</div>
+          <div class="mineral-zh">彩虹螢石</div>
+        </td>
       </tr>
     </tbody>
   </table>
 </body>
+
 </html>
